@@ -34,12 +34,12 @@ button {
 .hero {
 	position: relative;
 	display: flex;
-	height: 100vh;
+	height: calc(100vh - 60px);
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
 	padding: 80px 0;
-	background: url("../images/bg.jfif") no-repeat center/cover;
+	background: url("../images/bg.jfif") no-repeat center/cover fixed;
 }
 .hero::before {
 	content: "";
@@ -100,6 +100,9 @@ button {
 	height: 60px;
 	background-color: var(--dark);
 	color: var(--light);
+	position: sticky;
+	top: 0;
+	z-index: 999;
 }
 
 .header .container {
@@ -116,4 +119,44 @@ button {
 .header__link {
 	font-size: 22px;
 	margin-left: 15px;
+}
+
+.grid {
+	display: grid;
+}
+
+.grid__col-6 {
+	grid-template-columns: 1fr 1fr;
+}
+
+.grid__col-4 {
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.grid__col-3 {
+	grid-template-columns: repeat(4, 1fr);
+}
+
+.footer {
+	padding: 10px 0;
+	background-color: var(--dark);
+	color: var(--light);
+}
+
+.footer .container {
+	column-gap: 30px;
+}
+
+.footer__title {
+	font-size: 24px;
+	margin-bottom: 15px;
+}
+
+.footer__link {
+	display: block;
+	font-size: 20px;
+}
+
+.footer__link:not(:last-child) {
+	margin-bottom: 10px;
 }
